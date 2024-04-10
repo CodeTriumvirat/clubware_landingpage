@@ -7,68 +7,64 @@ import Logo from "./Logo.astro";
   nav a {
     @apply hover:bg-pink-700 text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out;
   }
-  
-  header{
-  background-image: url('../../public/assets/images/background_header.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+
+  header {
+    background-image: url("../../public/assets/images/background_header.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 </style>
 
-<nav class='flex justify-between p-8'>
-    <Logo/>
-  <ul class='flex '>
+<nav class='flex justify-between py-8 max-w-screen-xl mx-auto'>
+  <Logo />
+  <ul class='flex'>
     <li>
-      <a
-        href='#'
-        >Home</a
-      >
+      <a href='#'>Home</a>
     </li>
     <li>
-      <a
-        href='#'
-        >Features</a
-      >
+      <a href='#'>Features</a>
     </li>
     <li>
-      <a
-        href='#'
-        >Pricing</a
-      >
+      <a href='#'>Pricing</a>
     </li>
     <li>
-      <a
-        href='#'
-        >About Us</a
-      >
+      <a href='#'>About Us</a>
     </li>
     <li>
-      <a
-        href='#'
-        >Contact</a
-      >
+      <a href='#'>Contact</a>
     </li>
     <li>
-      <a
-        href='#'
-        class='bg-pink-700 hover:bg-white hover:text-black'
+      <a href='#' class='bg-pink-700 hover:bg-white hover:text-black'
         >Request Demo</a
       >
     </li>
   </ul>
 </nav>
 
-<header class='text-center flex flex-col  text-white h-[600px]  w-full py-24'>
-<div class="w-1/2">
-  <div class="bg-black opacity-70 p-8 mb-12"> 
-    <h1 class='text-5xl mb-8'>
-        From Backstage to Front Desk
-      </h1>
-      <p class='text-3xl mb-6 bg-black '>All Your Club Needs in One Place.</p>
+<header class='text-center flex flex-col text-white h-[600px] w-full py-24'>
+  <div class='flex justify-center mb-8'>
+    <div class='bg-black bg-opacity-55  grow'></div>
+    <div class='max-w-screen-xl w-full grow text-left'>
+      <div class='flex'>
+        <div class="bg-black bg-opacity-55 py-12 pr-12">
+          <h1 class='text-5xl'>From Backstage to Front Desk</h1>
+          <p class='text-3xl mt-8' >
+            All Your Club Needs in One Place.
+          </p>
+        </div>
+      </div>
+      <div class="grow"></div>
     </div>
-   
-  <Button classes="self-center shadow-2xl"> REQUEST A DEMO </Button>
-</div>
+    <div class='grow'></div>
+  </div>
+  <div class="flex justify-start">
+    <div class='grow'></div>
+    <div class="max-w-screen-xl text-left w-full grow">
 
+  <Button classes='shadow-2xl'> REQUEST A DEMO </Button>
+    </div>
+  <div class='grow'></div>
+
+  </div>
 </header>

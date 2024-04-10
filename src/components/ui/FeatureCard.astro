@@ -8,8 +8,14 @@ interface FeatureCardProps {
 const { classes = "", title, image } = Astro.props as FeatureCardProps;
 ---
 
-<div class=`bg-purple-800 p-4 rounded-lg ${classes}`>
-  <h3 class="font-bold text-lg mb-2">{title}</h3>
-  <img src={image} alt="Card Image" class="mb-2 rounded-lg">
+<style>
+   .card-shadow {
+    box-shadow: 0 0 .5em #4A0B4B;
+   }
+   </style>
+
+<div class=`py-4 card-shadow  rounded-lg ${classes}`>
+  <h3 class="font-bold text-xl mb-2 py-4 text-center">{title}</h3>
+  <img src={image} alt="Card Image" class="w-full mb-2 rounded-lg">
   <slot></slot>
 </div>
