@@ -1,20 +1,48 @@
 ---
-
-interface PriceCardProps {
-  title: string;
-
+interface PricingCardProps {
+  planName: string;
+  price: string;
+  features: { name: string; included: boolean }[];
 }
 
-const { title } = Astro.props as PriceCardProps;
-
+const {
+  planName = "",
+  price = "",
+  features = [],
+} = Astro.props as PricingCardProps;
 ---
 
-<style>
-  </style>
-
-  <div class=`w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8`>
-    <h3>{title}</h3>
-    <ul class="space-y-5 my-7">
-    <slot></slot>
-    </ul>
+<div
+  class="w-full max-w-sm p-4 bg-gray-950 text-gray-300 rounded-lg shadow sm:p-8"
+>
+  <h5 class="mb-4 text-xl font-medium">
+    {planName}
+  </h5>
+  <div class="flex items-baseline">
+    <span class="text-2xl font-extrabold tracking-tight">{price}</span>
+    <span class="ms-1  font-normal">/month</span>
   </div>
+  <ul role="list" class="space-y-5 my-7">
+    {
+      features.map((feature) => (
+        <li class="flex items-center">
+          <svg
+            class={`flex-shrink-0 w-4 h-4 ${feature.included ? "text-blue-700" : "text-gray-400 "}`}
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+          </svg>
+          <span
+            class={`text-base font-normal leading-tight  ms-3 ${!feature.included ? "line-through decoration-gray-300" : ""}`}
+          >
+            {feature.name}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+  <slot />
+</div>

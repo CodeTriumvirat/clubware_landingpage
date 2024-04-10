@@ -1,8 +1,47 @@
 ---
-import PriceCard from './ui/PriceCard.astro'
-import PriceCardItem from './ui/PriceCard.astro'
----
+import PriceCard from "./ui/PriceCard.astro";
 
+// Define features for each plan
+const selfHostedFeatures = [
+  { name: "Basic", included: true },
+  { name: "Inventory Control", included: true },
+  { name: "Team Scheduling", included: true },
+  { name: "Shift Scheduling", included: true },
+  { name: "Guest Relations", included: true },
+  { name: "Ticket Sales", included: true },
+  { name: "Updates", included: false },
+  { name: "Backup and Recovery", included: false },
+  { name: "Additional Storage", included: false },
+  { name: "Custom Features", included: false },
+];
+
+const basicPlanFeatures = [
+  { name: "Enhanced", included: true },
+  { name: "Inventory Control", included: true },
+  { name: "Team Scheduling", included: true },
+  { name: "Shift Scheduling", included: true },
+  { name: "Guest Relations", included: true },
+  { name: "Ticket Sales", included: true },
+  { name: "Updates", included: true },
+  { name: "Backup and Recovery", included: false },
+  { name: "Additional Storage", included: false },
+  { name: "Custom Features", included: false },
+];
+
+const proPlanFeatures = [
+  { name: "Military-grade", included: true },
+
+  { name: "Inventory Control", included: true },
+  { name: "Team Scheduling", included: true },
+  { name: "Shift Scheduling", included: true },
+  { name: "Guest Relations", included: true },
+  { name: "Ticket Sales", included: true },
+  { name: "Updates", included: true },
+  { name: "Backup and Recovery", included: true },
+  { name: "Additional Storage", included: true },
+  { name: "Custom Features", included: true },
+];
+---
 
 <style>
   li {
@@ -11,96 +50,29 @@ import PriceCardItem from './ui/PriceCard.astro'
 </style>
 
 <!-- Pricing Overview -->
-<section class='w-full py-24'>
-  <div class='mx-auto max-w-screen-xl text-white'>
-    <h2 class='text-3xl font-bold mb-8'>Pricing Overview</h2>
+<section class="w-full py-24">
+  <div class="mx-auto max-w-screen-xl text-white">
+    <h2 class="text-3xl font-bold mb-8">Pricing Overview</h2>
 
     <!-- Pricing Cards -->
-    <div class='flex flex-col md:flex-row justify-center items-stretch gap-8'>
-      <!-- Free Plan -->
+    <div class="flex flex-col md:flex-row justify-center items-stretch gap-8">
+      <PriceCard
+        planName="Self Hosted"
+        price="Free"
+        features={selfHostedFeatures}
+      />
 
-<PriceCard title="Test">
-  <PriceCardItem isIncluded={false}>Hallo 1111</PriceCardItem>
-  <PriceCardItem isIncluded={true}>Hallo 2222</PriceCardItem>
+      <PriceCard
+        planName="Basic"
+        price="€50"
+        features={basicPlanFeatures}
+      />
 
-</PriceCard>
-
-
-
-      <div class='rounded-lg p-6 flex-1 bg-black bg-opacity-30'>
-        <h3 class='font-bold text-xl mb-4'>Features</h3>
-        <ul class='mb-8'>
-          <li>Encryption:</li>
-          <li>Inventory Control:</li>
-          <li>Team Scheduling:</li>
-          <li>Shift Scheduling:</li>
-          <li>Guest Relations:</li>
-          <li>Ticket Sales:</li>
-          <li>Updates:</li>
-          <li>Backup and Recovery:</li>
-          <li>Additional Storage:</li>
-          <li>Custom Features:</li>
-        </ul>
-        <div class='text-center text-2xl font-bold'></div>
-      </div>
-
-      <div
-        class='rounded-lg p-6 flex-1 bg-black bg-opacity-40 hover:bg-[#4A0B4B] hover:bg-opacity-55 hover:shadow-xl transition duration-150 ease-in-out'
-      >
-        <h3 class='mb-4 text-xl font-medium text-gray-500 dark:text-gray-400'>
-          Self Hosted
-        </h3>
-        <div class='text-2xl font-bold text-gray-900 dark:text-white'>Free</div>
-        <ul class='mb-8'>
-          <li>Basic</li>
-          <li>Included</li>
-          <li>Included</li>
-          <li>included</li>
-          <li>included</li>
-          <li>included</li>
-          <li>Manual</li>
-          <li>Not included</li>
-          <li>Not included</li>
-          <li>Not included</li>
-        </ul>
-        <div class='text-2xl font-bold'>Free</div>
-      </div>
-
-      <!-- Basic Plan -->
-      <div class='rounded-lg p-6 flex-1 bg-black bg-opacity-40'>
-        <h3 class='font-bold text-xl mb-4'>Basic</h3>
-        <ul class='mb-8'>
-          <li>Enhanced</li>
-          <li>Included</li>
-          <li>Included</li>
-          <li>Included</li>
-          <li>Basic</li>
-          <li>Included</li>
-          <li>Automatic</li>
-          <li>Basic</li>
-          <li>5GB</li>
-          <li>Not included</li>
-        </ul>
-        <div class='text-2xl font-bold'>$50 / Month</div>
-      </div>
-
-      <!-- Pro Plan -->
-      <div class='rounded-lg p-6 flex-1 bg-black bg-opacity-40'>
-        <h3 class='font-bold text-xl mb-4'>Pro</h3>
-        <ul class='mb-8'>
-          <li>Military-grade</li>
-          <li>Advanced</li>
-          <li>Advanced</li>
-          <li>Advanced</li>
-          <li>Enhanced</li>
-          <li>Unlimited</li>
-          <li>Automatic + Priority</li>
-          <li>Advanced</li>
-          <li>50GB</li>
-          <li>Included</li>
-        </ul>
-        <div class='text-2xl font-bold'>$200 / Month</div>
-      </div>
+      <PriceCard
+        planName="Pro"
+        price="€200"
+        features={proPlanFeatures}
+      />
     </div>
   </div>
 </section>
