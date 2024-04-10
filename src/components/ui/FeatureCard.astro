@@ -11,6 +11,6 @@ const { title, image } = Astro.props as FeatureCardProps;
   class="card-shadow w-full max-w-sm p-4 bg-gray-950 bg-opacity-40 rounded-lg shadow-lg sm:p-6 space-y-4"
 >
   <h5 class="text-xl text-center">{title}</h5>
-  <img src={image} alt="Card Image" class="w-full rounded-lg" />
+  <img src={`src/images/${image}`} alt="Card Image" class="w-full rounded-lg" />
   <slot />
 </div>
