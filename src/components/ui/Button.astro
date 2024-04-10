@@ -1,0 +1,14 @@
+---
+
+interface ButtonProps {
+  classes?: string;
+}
+
+const { classes = "" } = Astro.props as ButtonProps;
+---
+
+<button
+  class={`bg-pink-700 hover:bg-white hover:text-black text-white font-bold py-2 px-8 rounded shadow-2xl ${classes}`}
+>
+  <slot></slot>
+</button>

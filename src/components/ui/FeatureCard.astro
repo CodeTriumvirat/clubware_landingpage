@@ -1,0 +1,15 @@
+---
+interface FeatureCardProps {
+  title: string;
+  classes?: string;
+  image: string;
+}
+
+const { classes = "", title, image } = Astro.props as FeatureCardProps;
+---
+
+<div class=`bg-purple-800 p-4 rounded-lg ${classes}`>
+  <h3 class="font-bold text-lg mb-2">{title}</h3>
+  <img src={image} alt="Card Image" class="mb-2 rounded-lg">
+  <slot></slot>
+</div>

@@ -1,0 +1,74 @@
+---
+import Button from "./ui/Button.astro";
+import Logo from "./Logo.astro";
+---
+
+<style>
+  nav a {
+    @apply hover:bg-pink-700 text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out;
+  }
+  
+  header{
+  background-image: url('../../public/assets/images/background_header.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+</style>
+
+<nav class='flex justify-between p-8'>
+    <Logo/>
+  <ul class='flex '>
+    <li>
+      <a
+        href='#'
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        href='#'
+        >Features</a
+      >
+    </li>
+    <li>
+      <a
+        href='#'
+        >Pricing</a
+      >
+    </li>
+    <li>
+      <a
+        href='#'
+        >About Us</a
+      >
+    </li>
+    <li>
+      <a
+        href='#'
+        >Contact</a
+      >
+    </li>
+    <li>
+      <a
+        href='#'
+        class='bg-pink-700 hover:bg-white hover:text-black'
+        >Request Demo</a
+      >
+    </li>
+  </ul>
+</nav>
+
+<header class='text-center flex flex-col  text-white h-[600px]  w-full py-24'>
+<div class="w-1/2">
+  <div class="bg-black opacity-70 p-8 mb-12"> 
+    <h1 class='text-5xl mb-8'>
+        From Backstage to Front Desk
+      </h1>
+      <p class='text-3xl mb-6 bg-black '>All Your Club Needs in One Place.</p>
+    </div>
+   
+  <Button classes="self-center shadow-2xl"> REQUEST A DEMO </Button>
+</div>
+
+</header>

@@ -1,0 +1,14 @@
+@import 'fonts.css';
+@import "typography.css";
+
+body{
+  background-color: #0E0317;
+}
+
+header{
+  background-image: url('../../public/assets/images/background_header.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
