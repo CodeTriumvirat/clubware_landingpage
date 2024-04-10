@@ -1,0 +1,54 @@
+---
+import FeatureCard from "../ui/FeatureCard.astro";
+---
+
+<section id="features" class="main-section">
+    <h2 class="section-heading">Features Overview</h2>
+
+    <!-- Feature List -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Inventory Control -->
+      <FeatureCard
+        title="Inventory Control"
+        image="../../public/assets/images/features_inventory_control.png"
+      >
+        <p class="p-4">
+          Stay stocked: never over or under order with automatic inventory-level
+          alerts.
+        </p>
+      </FeatureCard>
+
+      <!-- Team Coordination -->
+      <FeatureCard
+        title="Team Coordination"
+        image="../../public/assets/images/features_team_coordination.png"
+      >
+        <p class="p-4">
+          Optimize your workflow. Ensure every team member is on track with
+          role-specific to-dos.
+        </p>
+      </FeatureCard>
+
+      <!-- Shift Planning -->
+      <FeatureCard
+        title="Shift Planning"
+        image="../../public/assets/images/features_shift_planing.png"
+      >
+        <p class="p-4">
+          Plan with ease. Balance your resources effectively to ensure a smooth
+          operation.
+        </p>
+      </FeatureCard>
+
+      <!-- Guest Management -->
+      <FeatureCard
+        title="Guest Management"
+        image="../../public/assets/images/features_guest_managment.png"
+      >
+        <p class="p-4">
+          Enhance your guest list management. Handle VIPs with care and track
+          regular patrons.
+        </p>
+      </FeatureCard>
+    </div>
+</section>

@@ -1,0 +1,89 @@
+---
+import Button from "../ui/Button.astro";
+---
+
+<style>
+  input,
+  textarea {
+    @apply w-full p-3 bg-gray-950 bg-opacity-50 rounded-md;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-gray-400;
+  }
+
+  input:focus,
+  textarea:focus {
+    @apply outline-none ring-2 ring-funkyPurple-900;
+  }
+</style>
+
+<section id="contact" class="main-section">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+    <div class="space-y-8">
+      <h2 class="section-heading">Reach Out to Us</h2>
+      <p>
+        If you have any questions or need further information, please don't
+        hesitate to contact us.
+      </p>
+      <ul>
+        <li><strong>Phone:</strong> +1 (555) 123-4567</li>
+        <li><strong>Email:</strong> support@clubware.io</li>
+        <li>
+          <strong>Address:</strong> 123 Clubware Lane, Tech City, TC 12345
+        </li>
+      </ul>
+      <div>
+        <h3 class="text-xl mb-2">Follow Us</h3>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-funkyPurple-300">Facebook</a>
+          <a href="#" class="hover:text-funkyPurple-300">Twitter</a>
+          <a href="#" class="hover:text-funkyPurple-300">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-8">
+      <h2 class="section-heading">Send Us a Message</h2>
+      <form action="#" method="POST" class="space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-medium">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="card-shadow"
+            placeholder="Enter your name"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium">Your Email</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="card-shadow"
+            required
+            placeholder="Enter your email"
+          />
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            class="card-shadow"
+            rows="4"
+            required
+            placeholder="Your message here..."></textarea>
+        </div>
+        <div class="text-center">
+          <Button type="submit">Send Message</Button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

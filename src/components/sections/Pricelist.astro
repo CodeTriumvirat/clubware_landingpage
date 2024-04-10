@@ -1,5 +1,5 @@
 ---
-import PriceCard from "./ui/PriceCard.astro";
+import PriceCard from "../ui/PriceCard.astro";
 
 // Define features for each plan
 const selfHostedFeatures = [
@@ -50,29 +50,21 @@ const proPlanFeatures = [
 </style>
 
 <!-- Pricing Overview -->
-<section class="w-full py-24">
-  <div class="mx-auto max-w-screen-xl text-white">
-    <h2 class="text-3xl font-bold mb-8">Pricing Overview</h2>
+<section id="pricelist" class="main-section">
+  <h2 class="section-heading">Pricing Overview</h2>
 
-    <!-- Pricing Cards -->
-    <div class="flex flex-col md:flex-row justify-center items-stretch gap-8">
-      <PriceCard
-        planName="Self Hosted"
-        price="Free"
-        features={selfHostedFeatures}
-      />
+  <!-- Pricing Cards -->
+  <div
+    class="flex flex-col sm:flex-row justify-center items-center sm:justify-between gap-8 w-full"
+  >
+    <PriceCard
+      planName="Self Hosted"
+      price="Free"
+      features={selfHostedFeatures}
+    />
 
-      <PriceCard
-        planName="Basic"
-        price="€50"
-        features={basicPlanFeatures}
-      />
+    <PriceCard planName="Basic" price="€50" features={basicPlanFeatures} />
 
-      <PriceCard
-        planName="Pro"
-        price="€200"
-        features={proPlanFeatures}
-      />
-    </div>
+    <PriceCard planName="Pro" price="€200" features={proPlanFeatures} />
   </div>
 </section>

@@ -1,0 +1,50 @@
+---
+const faq = [
+  {
+    question: "What is Clubware.io?",
+    answer:
+      "Clubware.io is an all-in-one club management platform designed to streamline operations from backstage to the front desk. It integrates inventory management, shift planning, guest tracking, and more into one easy-to-use interface.",
+  },
+  {
+    question: "How does the free trial work?",
+    answer:
+      "We offer a 30-day free trial with access to all features of the Pro plan. There's no commitment, and no credit card is required. You can upgrade or cancel at any time during the trial.",
+  },
+  {
+    question: "Can I cancel my subscription at any time?",
+    answer:
+      "Yes, you can cancel your subscription at any time. We make it easy to cancel online without any hidden fees or complications.",
+  },
+  {
+    question:
+      "Do you offer any discounts for non-profits or educational organizations?",
+    answer:
+      "Yes, we offer special pricing for non-profit and educational organizations. Please contact our sales team for more details and to see if you qualify.",
+  },
+];
+---
+
+<style>
+  details[open] > summary {
+    @apply rounded-b-none bg-habibiViolet-800 transition;
+  }
+</style>
+
+<!-- FAQ Section -->
+<section id="faq" class="main-section">
+  <h2 class="section-heading">Frequently Asked Questions</h2>
+
+  <!-- Accordion -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
+    {
+      faq.map(({ question, answer }) => (
+        <details>
+          <summary class="card-shadow cursor-pointer list-none p-4 rounded-md bg-gray-950 bg-opacity-50  hover:bg-habibiViolet-800">
+            {question}
+          </summary>
+          <p class="p-4 bg-habibiViolet-800 rounded-b-md">{answer}</p>
+        </details>
+      ))
+    }
+  </div>
+</section>

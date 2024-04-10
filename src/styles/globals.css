@@ -1,14 +1,18 @@
-@import 'fonts.css';
+@import "fonts.css";
+@import "color-tokens.css";
 @import "typography.css";
 
-body{
-  background: linear-gradient(180deg, #0E0317 0%, #1A1A1A 100%)
+.main-section {
+  @apply w-full mx-auto max-w-screen-xl flex flex-col items-center  sm:items-start space-y-8;
+}
+.section-heading {
+  @apply text-4xl;
+}
+body {
+  background: linear-gradient(180deg, #160a20 0%, #1c1521 50%, #0f0418 100%);
+  @apply text-gray-100;
 }
 
-header{
-  background-image: url('../../public/assets/images/background_header.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.card-shadow {
+  box-shadow: rgba(73, 20, 104, 0.2) 0px 5px 20px 0px;
 }
-
