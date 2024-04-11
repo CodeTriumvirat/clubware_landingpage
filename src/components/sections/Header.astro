@@ -20,7 +20,7 @@ import Logo from "../Logo.astro";
   }
 </style>
 
-<nav class="sm:flex justify-between py-8 max-w-screen-xl mx-auto hidden">
+<nav class="sm:flex justify-between py-8 max-w-screen-xl mx-auto hidden px-2 xl:px-0">
   <Logo />
   <ul class="flex gap-1">
     <li>
@@ -48,8 +48,10 @@ import Logo from "../Logo.astro";
   <div class="flex justify-center mb-8">
     <div class="bg-black bg-opacity-55 sm:grow"></div>
     <div class="max-w-screen-xl w-full grow text-left">
-      <div class="flex">
-        <div class="bg-black bg-opacity-55 py-12 pr-12">
+      <div class="flex justify-center sm:justify-start">
+        <div
+          class="bg-black bg-opacity-55 py-12 px-4 xl:pl-0 sm:pr-12 text-center sm:text-left"
+        >
           <h1 class="text-5xl">From Backstage to Front Desk</h1>
           <p class="text-3xl mt-8">All Your Club Needs in One Place.</p>
         </div>
@@ -58,9 +60,9 @@ import Logo from "../Logo.astro";
     </div>
     <div class="sm:grow"></div>
   </div>
-  <div class="flex justify-start">
+  <div class="flex justify-start pl-2 xl:pl-0">
     <div class="sm:grow"></div>
-    <div class="max-w-screen-xl text-left w-full grow">
+    <div class="max-w-screen-xl sm:text-left w-full grow">
       <Button classes="shadow-2xl"> REQUEST A DEMO </Button>
     </div>
     <div class="sm:grow"></div>
